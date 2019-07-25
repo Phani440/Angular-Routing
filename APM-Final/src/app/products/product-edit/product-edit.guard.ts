@@ -16,6 +16,7 @@ export class ProductEditGuard implements CanDeactivate<ProductEditComponent>  {
     if (component.isDirty) {
       const productName = component.product.productName || 'New Product';
       return confirm(`Navigate away and lose all changes to ${productName}?`);
+      // return confirm('Navigate away and lose all changes to '+ productName);
     }
     return true;
   }

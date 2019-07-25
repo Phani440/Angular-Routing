@@ -32,6 +32,8 @@ export class ProductEditComponent implements OnInit {
     this.originalProduct = value ? { ...value } : null;
   }
 
+  
+
   constructor(private productService: ProductService,
               private messageService: MessageService,
               private route: ActivatedRoute,
@@ -43,6 +45,11 @@ export class ProductEditComponent implements OnInit {
       this.errorMessage = resolvedData.error;
       this.onProductRetrieved(resolvedData.product);
     });
+
+    // const resolvedData: ProductResolved = this.route.snapshot.data['resolvedData'];
+    // this.errorMessage = resolvedData.error;
+    // this.onProductRetrieved(resolvedData.product);
+    
   }
 
   onProductRetrieved(product: Product): void {
